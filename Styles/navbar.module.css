@@ -1,0 +1,330 @@
+/* Existing navbar styles */
+.navbar {
+    border-bottom: 0.1px silver solid;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to left, #CDF7EB, #F3F3F5, #E7E3F4);
+    padding: 20px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative; /* Ensure the shadow applies correctly */
+    z-index: 10; /* Ensure the navbar is above other elements */
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    /* Pushes logo to the left */
+}
+
+.logoText {
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    letter-spacing: 1px;
+    /* Space out the letters */
+}
+
+.logoText span {
+    color: lime;
+}
+
+.navList {
+    display: flex;
+    list-style-type: none;
+    margin: 0 0 0 30px;
+    padding: 0;
+    flex: 1;
+}
+
+.navItem {
+    position: relative;
+    margin: 0 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #222121;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.navItem::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* Adjust based on your design */
+    width: 0;
+    height: 2px;
+    /* Border thickness */
+    background-color: lime;
+    /* Border color */
+    transition: width 0.5s ease;
+}
+
+.navItem:hover::after {
+    width: 100%;
+    /* Full width on hover */
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    /* margin-right: 50px; */
+}
+
+.searchButton,
+.subscribeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.searchButton {
+    background-color: #9977ff;
+    color: white;
+}
+
+.subscribeButton {
+    background-color: #9977ff;
+    color: white;
+}
+
+.searchButton:hover {
+    background-color: #c5b3fb;
+}
+
+.subscribeButton:hover {
+    background-color: #c5b3fb;
+}
+
+.buttonIcon {
+    font-size: 1.1em;
+}
+
+/* sidebar css is here  */
+.sidebar{
+    display: none;
+    background-color: rgb(255, 255, 255);
+    /* width: 300px; */
+    height: 100vh;
+    position: fixed;
+    left:0;
+    top:0;
+    padding: 10px;
+    width:0px;
+    left:-400px;
+    overflow:hidden;
+    transition: width 0.2s ease;
+    /* Add other sidebar styles */
+}
+
+
+.sidebar.open {
+    width: 400px;
+    left:0px; /* Or any width you prefer */
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    position: absolute;
+    top:18px;
+    left:350px;
+    font-size: 2.3rem;
+    cursor: pointer;
+}
+.closeButton:hover{
+    color:#9977ff;
+}
+.menuBar{
+    display: none;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    top:25px;
+    right:10px;
+    padding: 5px;
+    border-radius: 5px;
+    color:rgb(0, 0, 0);
+    border:none;
+    font-size: 1.8rem;
+
+}
+ 
+.topbar{
+    /* background-color: red; */
+    text-align: center;
+}
+.middlebar{
+    margin-top: 20px;
+}
+.sideList{
+    padding:5px 0px 5px 10px;
+    list-style: none;
+}
+.sidenav{
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight:bolder;
+    padding: 3px;
+    margin-bottom: 30px;
+    border-bottom: 1px lime solid;
+}
+.sidenav:hover{
+    padding-left: 5px;
+    color:#9977ff;
+}
+
+
+.bottombar{
+    margin-top: 50px;
+}
+.bottomLink{
+    text-align:center;
+}
+#sociallink{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    padding: 3px;
+    border-radius: 3px;
+    font-size: 1.8rem;
+    margin: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+.facebook:hover{
+    color:#0882EF;
+}
+.instagram:hover{
+    color:#ED4081;
+}
+
+.whatsapp:hover{
+    color:#39E55C;
+}
+.youtube:hover{
+    color:#FE0000;
+}
+.bottombar{
+    text-align: center;
+}
+.bottombar p{
+    text-transform: uppercase;
+}
+
+.bottomList{
+    text-align: center;
+
+}
+.bottomnav{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+.bottomnav li{
+    cursor: pointer;
+    padding: 0px 5px;
+    justify-content: center;
+    font-size: 14px;
+}
+.bottomnav li:hover{
+    color:rgb(100, 100, 100);
+}
+
+
+/* Existing blur effect for the body */
+.blur-content {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* Full viewport search box without blur */
+.searchModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchModal.open {
+    display: flex;
+}
+
+.searchModalContent {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.searchInput {
+    background-color: black;
+    width: calc(100% - 40px);
+    padding: 10px;
+    /* border-radius: 5px; */
+    font-size: 1.2em;
+    color:white;
+    border:none;
+    border-bottom: 1px solid white;
+    outline:none;
+}
+.searchInput:focus{
+    border: none;
+    
+    border-bottom: 1px solid #ffffff;
+}
+
+.closeSearchButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+.closeSearchButton:hover {
+    color: #9977ff;
+}
+
+
+
+
+
+@media screen and (max-width: 1210px) {
+    .navList {
+        display: none;
+    }
+
+    .buttonContainer {
+        margin-right: 40px;
+    }
+    .sidebar{
+        display: block;
+    }
+    .menuBar{
+        display: block;
+    }
+}
