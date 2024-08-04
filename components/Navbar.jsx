@@ -1,8 +1,9 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
 import style from '../Styles/navbar.module.css';
 import { FaSearch, FaBars, FaFacebookSquare, FaInstagramSquare, FaWhatsappSquare } from 'react-icons/fa';
-import { IoLogoYoutube, IoClose } from "react-icons/io5";
+import { IoLogoYoutube, IoClose, IoSearch } from "react-icons/io5";
 
 const Navbar = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -22,60 +23,96 @@ const Navbar = () => {
         <>
             <div className={style.navbar}>
                 <div className={style.logo}>
-                    <span className={style.logoText}>Ta<span>V</span>ion</span>
+                    <Link className={style.textLink} href="/" ><span className={style.logoText}>Ta<span>V</span>ion</span></Link>
                 </div>
                 <ul className={style.navList}>
-                    <li className={style.navItem}>Home</li>
-                    <li className={style.navItem}>Trending</li>
-                    <li className={style.navItem}>Tech News</li>
-                    <li className={style.navItem}>Gadget</li>
-                    <li className={style.navItem}>Innovation</li>
-                    <li className={style.navItem}>Insights</li>
-                    <li className={style.navItem}>Tech Events</li>
+                    <li >
+                        <Link className={style.navItem} href="/">Home</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/trending">Trending</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/technews">Tech News</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/gadget">Gadget</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/innovation">Innovation</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/insights">Insights</Link>
+                    </li>
+                    <li >
+                        <Link className={style.navItem} href="/techevents">Tech Events</Link>
+                    </li>
                 </ul>
                 <div className={style.buttonContainer}>
-                    <button onClick={toggleSearch} className={style.searchButton}>
-                        <FaSearch className={style.buttonIcon} />
-                    </button>
-                    <button className={style.subscribeButton}>
+                    <p onClick={toggleSearch} className={style.searchButton}>
+                        <span>search</span><IoSearch className={style.buttonIcon} />
+                    </p>
+                    <p className={style.subscribeButton}>
                         Subscribe
-                    </button>
+                    </p>
                     <p onClick={toggleSidebar} className={style.menuBar}>
                         <FaBars />
                     </p>
                 </div>
                 <div className={`${style.sidebar} ${isSidebarOpen ? style.open : ''}`}>
                     <div className={style.topbar}>
-                        <span className={style.logoText}>Ta<span>V</span>ion</span>
+                        <Link className={style.textLink} href="/" ><span className={style.logoText}>Ta<span>V</span>ion</span></Link>
                         <button onClick={toggleSidebar} className={style.closeButton}>
                             <IoClose />
                         </button>
                     </div>
                     <div className={style.middlebar}>
                         <ul className={style.sideList}>
-                            <li className={style.sidenav}>Home</li>
-                            <li className={style.sidenav}>Trending</li>
-                            <li className={style.sidenav}>Tech News</li>
-                            <li className={style.sidenav}>Gadget</li>
-                            <li className={style.sidenav}>Innovation</li>
-                            <li className={style.sidenav}>Insights</li>
-                            <li className={style.sidenav}>Tech Events</li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/">Home</Link>
+                            </li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/trending">Trending</Link>
+                            </li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/technews">Tech News</Link>
+                            </li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/gadget">Gadget</Link>
+                            </li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/innovation">Innovation</Link>
+                            </li>
+                            <li onClick={toggleSidebar} className={style.sidenav} >
+                                <Link className={style.sideLink} href="/insights">Insights</Link>
+                            </li>
+                            <li className={style.sidenav} >
+                                <Link className={style.sideLink} href="/techevents">Tech Events</Link>
+                            </li>
                         </ul>
                     </div>
                     <div className={style.bottombar}>
                         <hr />
                         <p style={{ color: 'lime', textAlign: 'center' }}>Follow us</p>
                         <div className={style.bottomLink}>
-                            <FaFacebookSquare id={style.sociallink} className={style.facebook} />
-                            <FaInstagramSquare id={style.sociallink} className={style.instagram} />
-                            <FaWhatsappSquare id={style.sociallink} className={style.whatsapp} />
-                            <IoLogoYoutube id={style.sociallink} className={style.youtube} />
+                            <Link className={style.socialLink} href="https://www.facebook.com">
+                                <FaFacebookSquare id={style.sociallink} className={style.facebook} />
+                            </Link>
+                            <Link className={style.socialLink} href="https://www.instagram.com">
+                                <FaInstagramSquare id={style.sociallink} className={style.instagram} />
+                            </Link>
+                            <Link className={style.socialLink} href="https://www.whatsapp.com">
+                                <FaWhatsappSquare id={style.sociallink} className={style.whatsapp} />
+                            </Link>
+                            <Link className={style.socialLink} href="https://www.youtube.com">
+                                <IoLogoYoutube id={style.sociallink} className={style.youtube} />
+                            </Link>
                         </div>
                         <div className={style.bottomList}>
                             <ul className={style.bottomnav}>
-                                <li>Contact Us</li>
-                                <li>About Us</li>
-                                <li>Privacy Policy</li>
+                                <li><Link className={style.moreLink} href="sitelink">Contact Us</Link></li>
+                                <li><Link className={style.moreLink} href="sitelink">About Us</Link></li>
+                                <li><Link className={style.moreLink} href="sitelink">Privacy Policy</Link></li>
                             </ul>
                         </div>
                     </div>

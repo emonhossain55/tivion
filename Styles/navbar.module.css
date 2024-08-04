@@ -1,13 +1,31 @@
 /* Existing navbar styles */
+.textLink{
+    text-decoration: none;
+}
+.sideLink{
+    text-decoration: none;
+    color:black;
+    font-size: 1.2em;
+}
+.socialLink{
+    text-decoration: none;
+    color:rgb(0, 0, 0);
+}
+.moreLink{
+    text-decoration:none;
+    color:#222121;
+}
 .navbar {
     border-bottom: 0.1px silver solid;
     display: flex;
     align-items: center;
+    width: 100%;
+    top:0px;
+    height: 90px;
     background: linear-gradient(to left, #CDF7EB, #F3F3F5, #E7E3F4);
     padding: 20px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: relative; /* Ensure the shadow applies correctly */
-    z-index: 10; /* Ensure the navbar is above other elements */
+    position: sticky; /* Ensure the shadow applies correctly */
+    z-index: 10; /* Ensure the navbar is above other elements */ 
 
 }
 
@@ -69,44 +87,58 @@
     /* Full width on hover */
 }
 
+.navLink{
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+
+
+
 .buttonContainer {
     display: flex;
     align-items: center;
     /* margin-right: 50px; */
 }
 
-.searchButton,
+
+
+.searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color:rgb(74, 74, 74);
+}
+.searchButton span{
+    font-size: 0.7em;
+    font-weight: normal;
+    color:rgb(0, 0, 0);
+}
+
 .subscribeButton {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 15px;
     margin-left: 10px;
     border: none;
     border-radius: 5px;
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 8px 15px;
+    color: rgb(75, 74, 74);
+    background-color:#ffffff;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
 }
 
-.searchButton {
-    background-color: #9977ff;
-    color: white;
-}
-
-.subscribeButton {
-    background-color: #9977ff;
-    color: white;
-}
-
-.searchButton:hover {
-    background-color: #c5b3fb;
-}
 
 .subscribeButton:hover {
-    background-color: #c5b3fb;
+    background-color:#bba5fa;
+    color:white;
 }
 
 .buttonIcon {
@@ -125,7 +157,7 @@
     padding: 10px;
     width:0px;
     left:-400px;
-    overflow:hidden;
+    overflow:auto;
     transition: width 0.2s ease;
     /* Add other sidebar styles */
 }
@@ -141,7 +173,7 @@
     border: none;
     position: absolute;
     top:18px;
-    left:350px;
+    left:335px;
     font-size: 2.3rem;
     cursor: pointer;
 }
@@ -164,10 +196,12 @@
 }
  
 .topbar{
+    height: 10%;
     /* background-color: red; */
     text-align: center;
 }
 .middlebar{
+    height: 70%;
     margin-top: 20px;
 }
 .sideList{
@@ -189,6 +223,7 @@
 
 
 .bottombar{
+    height: 20%;
     margin-top: 50px;
 }
 .bottomLink{
@@ -258,7 +293,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     z-index: 999;
     justify-content: center;
     align-items: center;
@@ -273,7 +308,7 @@
     padding: 20px;
     border-radius: 8px;
     width: 90%;
-    max-width: 500px;
+    max-width: 400px;
     position: relative;
 }
 
@@ -281,7 +316,6 @@
     background-color: black;
     width: calc(100% - 40px);
     padding: 10px;
-    /* border-radius: 5px; */
     font-size: 1.2em;
     color:white;
     border:none;
@@ -326,5 +360,24 @@
     }
     .menuBar{
         display: block;
+    }
+}
+
+@media screen and (max-width: 485px) {
+
+    .sidebar.open{
+        width:300px;
+    }
+    .closeButton{
+        left:250px;
+    }
+    .searchButton span{
+        display: none;
+    }
+}
+@media screen and (max-width: 385px) {
+
+    .subscribeButton{
+        display: none;
     }
 }
